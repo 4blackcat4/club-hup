@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Clubs Hub</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f6f1;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background-color: #f9f6f1;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+    }
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .menu {
+      display: flex;
+      gap: 1rem;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+    .main-heading {
+      font-size: 2rem;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    .subheading {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .search-bar {
+      display: flex;
+      margin-bottom: 2rem;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 10px 0 0 10px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #2e7c6f;
+      color: #fff;
+      border: none;
+      border-radius: 0 10px 10px 0;
+      cursor: pointer;
+    }
+    .featured-title {
+      font-size: 1.25rem;
+      margin: 1.5rem 0 1rem;
+    }
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .club-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .club-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .club-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .club-icon img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    /* Hamburger Menu Styles */
+    .menu-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f6f1;
+        width: 100%;
+        padding: 1rem 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+      }
+
+      .menu-toggle:checked + .menu {
+        display: flex;
+      }
+
+      .menu-icon {
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .menu-toggle-label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .menu-toggle-label span {
+        background-color: #2e7c6f;
+        height: 4px;
+        width: 30px;
+        margin: 5px 0;
+        transition: transform 0.3s;
+      }
+
+      .menu-toggle:checked + .menu .menu-toggle-label span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+
+      .menu-toggle:checked + .menu .menu-toggle-label span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle:checked + .menu .menu-toggle-label span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon"> <img src="img/logo.png" style="width: 40px; height: 40px; border-radius: 5px;" ></div>
+        <h1>Club Hub</h1>
+      </div>
+
+      <!-- Hamburger Menu -->
+      <input type="checkbox" class="menu-toggle" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon menu-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Menu -->
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <h2 class="main-heading">Find and Join University Clubs</h2>
+    <p class="subheading">Explore a variety of clubs and sign up as a student member.</p>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search clubs" />
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div class="clubs-grid" id="clubs-container">
+      <!-- Clubs will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    const clubs = [
+      { name: 'نادي تيك نشين', icon: 'img/نادي التكنولوجيا.jpg', category: 'all' },
+      { name: 'نادي أمن المعلومات', icon: 'img/نادي امن المعلومات.jpg', category: 'cyber' },
+      { name: 'نادي قوقل للطلبة المطورين', icon: 'img/نادي قوقل.jpg', category: 'software' },
+      { name: 'نادي الخوارزميات', icon: 'img/نادي الخوارزميات.jpg', category: 'all' },
+      { name: 'نادي انجاز', icon: 'img/نادي انجاز.jpg', category: 'all' }
+    ];
+
+    const container = document.getElementById('clubs-container');
+    const searchBtn = document.getElementById('search-btn');
+    const searchInput = document.getElementById('search-input');
+
+    function displayClubs(filteredClubs) {
+      container.innerHTML = '';
+      if (filteredClubs.length === 0) {
+        container.innerHTML = '<p>No clubs found.</p>';
+      } else {
+        filteredClubs.forEach(club => {
+          const card = document.createElement('div');
+          card.className = 'club-card';
+          card.innerHTML = `
+            <div class="club-icon"><img src="${club.icon}" alt="${club.name}" /></div>
+            <p>${club.name}</p>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    searchBtn.addEventListener('click', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredClubs = clubs.filter(club => club.name.toLowerCase().includes(searchTerm));
+      displayClubs(filteredClubs);
+    });
+
+    displayClubs(clubs); // Display all clubs initially
+  </script>
+</body>
+</html>
