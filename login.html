@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Login</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center position-relative" style="min-height: 100vh;">
+
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" style="color: #2e6651; border-color: #2e6651;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#2e6651" class="bi bi-globe2 me-1" viewBox="0 0 16 16">
+                <path d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8Zm8-7a7 7 0 0 1 6.468 4.508A13.029 13.029 0 0 0 9 4.05V1.017ZM7 1.017V4.05a13.03 13.03 0 0 0-5.468 1.458A7 7 0 0 1 7 1.017ZM1.018 9a13.028 13.028 0 0 0 5.155 3.197A10.814 10.814 0 0 1 4.24 9H1.018Zm2.038-3h3.221a10.814 10.814 0 0 1 1.933-3.197A13.028 13.028 0 0 0 3.056 6Zm6.861-3.197A10.814 10.814 0 0 1 11.721 6h3.221a13.028 13.028 0 0 0-5.025-3.197ZM14.982 7h-3.221a10.814 10.814 0 0 1-1.933 3.197A13.028 13.028 0 0 0 14.982 7ZM8 14a7.977 7.977 0 0 1-2.06-.27A13.028 13.028 0 0 0 8 10.05a13.028 13.028 0 0 0 2.06 3.68A7.978 7.978 0 0 1 8 14Z"/>
+              </svg>
+          </button>
+                  
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('ar')">العربية</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="login-box animate__animated animate__fadeIn text-start" id="loginBox">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-4"> 
+        <p class="fw-semibold mb-0" id="welcomeText" style="color: #555; font-size: 18px;">Welcome back!</p>
+     
+        <img src="images/logopart.webp" alt="Club Hub Logo" style="max-width: 70px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+       <h2 class="text-center mb-4" id="title">Student Login</h2>
+
+    <form>
+      <div class="mb-3">
+        <label for="studentId" class="form-label" id="labelId">Student ID</label>
+        <input type="text" class="form-control" id="studentId" placeholder="e.g., 440123456" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label" id="labelPass">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" id="loginBtn">Login</button>
+
+      <div class="text-center mt-3">
+        <a href="#" class="text-decoration-none" id="forgotLink">Forgot your password?</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript for language switch -->
+  <script>
+    function setLanguage(lang) {
+  if (lang === 'ar') {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.getElementById("welcomeText").textContent = "مرحبًا بعودتك!";
+    document.getElementById("title").textContent = "تسجيل الدخول للطلاب";
+    document.getElementById("labelId").textContent = "الرقم الجامعي";
+    document.getElementById("labelPass").textContent = "كلمة المرور";
+    document.getElementById("loginBtn").textContent = "دخول";
+    document.getElementById("forgotLink").textContent = "نسيت كلمة المرور؟";
+  } else {
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    document.getElementById("welcomeText").textContent = "Welcome back!";
+    document.getElementById("title").textContent = "Student Login";
+    document.getElementById("labelId").textContent = "Student ID";
+    document.getElementById("labelPass").textContent = "Password";
+    document.getElementById("loginBtn").textContent = "Login";
+    document.getElementById("forgotLink").textContent = "Forgot your password?";
+  }
+}
+ 
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

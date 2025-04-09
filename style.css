@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(135deg, #f0f4f3, #dfeae6);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+.login-box input:focus {
+    border-color: #2e6651;
+    box-shadow: 0 0 5px rgba(46, 102, 81, 0.5);
+  }
+  
+  .login-box button {
+    background-color: #2e6651;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .login-box button:hover {
+    background-color: #244f3f;
+    transform: scale(1.02);
+  }
+  
+  .login-box a {
+    color: #2e6651;
+  }
+  
+  .login-box a:hover {
+    text-decoration: underline;
+  }
+  
