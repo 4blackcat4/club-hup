@@ -11,22 +11,32 @@
       color: #1a1a1a;
       margin: 0;
       padding: 0;
+      animation: fadeIn 1s ease-in;
     }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 1rem;
     }
+
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 0;
     }
+
     .logo {
       display: flex;
       align-items: center;
     }
+
     .logo-icon {
       width: 30px;
       height: 30px;
@@ -34,31 +44,38 @@
       border-radius: 5px;
       margin-right: 0.5rem;
     }
+
     .menu-icon {
       font-size: 24px;
       cursor: pointer;
     }
+
     .menu {
       display: flex;
       gap: 1rem;
     }
+
     .menu a {
       text-decoration: none;
       color: #1a1a1a;
     }
+
     .main-heading {
       font-size: 2rem;
       margin: 1rem 0 0.5rem;
       font-weight: bold;
     }
+
     .subheading {
       font-size: 1rem;
       margin-bottom: 1.5rem;
     }
+
     .search-bar {
       display: flex;
       margin-bottom: 2rem;
     }
+
     .search-bar input {
       flex: 1;
       padding: 0.75rem;
@@ -67,6 +84,7 @@
       border: 1px solid #ccc;
       outline: none;
     }
+
     .search-bar button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -75,17 +93,25 @@
       border: none;
       border-radius: 0 10px 10px 0;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
+
+    .search-bar button:hover {
+      background-color: #245f54;
+    }
+
     .featured-title {
       font-size: 1.25rem;
       margin: 1.5rem 0 1rem;
     }
+
     .clubs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 1rem;
       transition: all 0.3s ease-in-out;
     }
+
     .club-card {
       background-color: #ffffff;
       border-radius: 12px;
@@ -94,11 +120,14 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-origin: center;
     }
+
     .club-card:hover {
-      transform: translateY(-10px);
+      transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+
     .club-icon {
       display: flex;
       justify-content: center;
@@ -106,15 +135,14 @@
       width: 60px;
       height: 60px;
       margin-bottom: 0.5rem;
-      transition: transform 0.3s ease;
     }
+
     .club-icon img {
       width: 50px;
       height: 50px;
       object-fit: contain;
     }
 
-   
     .menu-toggle {
       display: none;
     }
@@ -168,30 +196,91 @@
         transform: rotate(-45deg) translateY(-8px);
       }
     }
+
+    .achievements {
+      margin-top: 2rem;
+    }
+
+    .achievement-article {
+      display: flex;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      gap: 1rem;
+      align-items: center;
+      animation: slideIn 0.8s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-40px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .achievement-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .my-clubs {
+      margin-top: 3rem;
+    }
+    .club-card {
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      transition: background 0.4s ease;
+    }
+
+    .club-card:hover {
+      background: linear-gradient(135deg, #d4f1f4, #ffffff);
+    }
+
+    #contactModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <div class="logo">
-        <div class="logo-icon"> <img src="img/logo.png" style="width: 40px; height: 40px; border-radius: 5px;" ></div>
+        <div class="logo-icon"><img src="img/logo.png" style="width: 40px; height: 40px; border-radius: 5px;" ></div>
         <h1>Club Hub</h1>
       </div>
 
-     
-      <input type="checkbox" class="menu-toggle" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon menu-toggle-label">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      
 
-      <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
     </div>
+
+    <section class="achievements">
+      <h2 class="featured-title">Club Achievements</h2>
+
+      <article class="achievement-article">
+        <img src="img/hackathon.jpg" alt="Hackathon Win" class="achievement-img">
+        <div>
+          <h3>TechNation Wins National Hackathon</h3>
+          <p>TechNation club secured 1st place in the 2025 National Hackathon for their AI-driven waste management app.</p>
+        </div>
+      </article>
+
+      <article class="achievement-article">
+        <img src="img/ieee_robotics.jpg" alt="IEEE Robotics" class="achievement-img">
+        <div>
+          <h3>IEEE Robotics Challenge</h3>
+          <p>IEEE members designed a functional robot that placed top 3 in the Gulf Robotics Competition.</p>
+        </div>
+      </article>
+    </section>
 
     <h2 class="main-heading">Find and Join University Clubs</h2>
     <p class="subheading">Explore a variety of clubs and sign up as a student member.</p>
@@ -201,23 +290,37 @@
       <button id="search-btn">Search</button>
     </div>
 
-    <div class="clubs-grid" id="clubs-container">
-      
-    </div>
+    <div class="clubs-grid" id="clubs-container"></div>
+
+    <section class="my-clubs">
+      <h2 class="featured-title">My Clubs</h2>
+      <div class="clubs-grid">
+        <div class="club-card">
+          <div class="club-icon"><img src="img/نادي التكنولوجيا.jpg" alt="TechNation" /></div>
+          <p>TechNation</p>
+        </div>
+        <div class="club-card">
+          <div class="club-icon"><img src="img/robotx.jpg" alt="RobotX" /></div>
+          <p>RobotX</p>
+        </div>
+      </div>
+    </section>
   </div>
+  <div class="clubs-grid" id="clubs-container"></div>
+
+    
 
   <script>
     const clubs = [
-  { name: 'TechNation', icon: 'img/نادي التكنولوجيا.jpg' },
-  { name: " أمن المعلومات", icon: 'img/نادي امن المعلومات.jpg' },
-  { name: 'قوقل للطلبة المطورين', icon: 'img/نادي قوقل.jpg' },
-  { name: ' الخوارزميات', icon: 'img/نادي الخوارزميات.jpg' },
-  { name: ' انجاز', icon: 'img/نادي انجاز.jpg' },
-  { name: 'IEEE', icon: 'img/IEEE.png' },
-  { name: 'RobotX', icon: 'img/robotx.jpg' },
-  { name: 'Cadio ', icon: 'img/codio.jpg' }
-];
-
+      { name: 'TechNation', icon: 'img/نادي التكنولوجيا.jpg' },
+      { name: " أمن المعلومات", icon: 'img/نادي امن المعلومات.jpg' },
+      { name: 'قوقل للطلبة المطورين', icon: 'img/نادي قوقل.jpg' },
+      { name: ' الخوارزميات', icon: 'img/نادي الخوارزميات.jpg' },
+      { name: ' انجاز', icon: 'img/نادي انجاز.jpg' },
+      { name: 'IEEE', icon: 'img/IEEE.png' },
+      { name: 'RobotX', icon: 'img/robotx.jpg' },
+      { name: 'Cadio ', icon: 'img/codio.jpg' }
+    ];
 
     const container = document.getElementById('clubs-container');
     const searchBtn = document.getElementById('search-btn');
@@ -246,7 +349,70 @@
       displayClubs(filteredClubs);
     });
 
-    displayClubs(clubs); 
+    displayClubs(clubs);
+  </script>
+
+
+  <footer style="background-color:#2e7c6f; color:white; padding:2rem 1rem; text-align:center;">
+    <div style="max-width: 900px; margin: auto;">
+      <p style="font-size: 1.25rem; font-weight: bold;">Clubs Hub</p>
+      <div style="margin: 1rem 0;">
+        <a href="#" onclick="showAbout()" style="margin: 0 1rem; color: white; text-decoration: underline;">About Us</a>
+        <a href="#" onclick="toggleModal()" style="margin: 0 1rem; color: white; text-decoration: underline;">Contact Us</a>
+      </div>
+      <p>&copy; 2025 Clubs Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="aboutModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:2rem; border-radius:12px; max-width:500px; width:90%; position:relative;">
+      <h2>About Us</h2>
+      <p>Clubs Hub connects students with university clubs, achievements, and events to help build a vibrant community.</p>
+      <button onclick="closeModal('aboutModal')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:2rem; border-radius:12px; max-width:500px; width:90%; position:relative;">
+      <h2>Contact Us</h2>
+      <form onsubmit="submitForm(event)">
+        <label>First Name:</label>
+        <input type="text" required><br>
+        <label>Last Name:</label>
+        <input type="text" required><br>
+        <label>Email:</label>
+        <input type="email" required><br>
+        <label>Description:</label>
+        <textarea rows="4" required style="width: 100%; max-width: 100%; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;"></textarea><br>
+
+
+
+        <button type="submit" style="margin-top:1rem; background:#2e7c6f; color:white; padding:0.5rem 1rem; border:none; border-radius:6px;">Submit</button>
+      </form>
+      <button onclick="toggleModal()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleModal() {
+      const modal = document.getElementById('contactModal');
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function showAbout() {
+      const aboutModal = document.getElementById('aboutModal');
+      aboutModal.style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you for contacting us! We’ll get back to you soon.");
+      toggleModal();
+    }
   </script>
 </body>
 </html>
