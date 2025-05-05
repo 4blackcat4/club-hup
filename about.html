@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>عن الجامعة</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       margin: 0;
       padding: 0;
       color: #333;
     }
 
-    
     nav {
-      background-color: #1f2937;
+      background-color: #1c1f4c;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
@@ -25,23 +23,25 @@
       color: white;
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .nav-links {
       display: flex;
       gap: 20px;
     }
 
-    .nav-links a {
+    .nav-links a, .nav-left a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
-    .nav-links a:hover {
-
-      text-decoration: underline;
-    }
-
 
     header {
-      background-color: #fdfdff;
+      background-color: #1c1f4c;
       color: white;
       padding: 1.5rem;
       text-align: center;
@@ -53,7 +53,7 @@
       padding: 1rem;
       background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     h1, h2 {
@@ -65,11 +65,10 @@
     }
 
     footer {
-      background-color: #1f2937;
+      background-color: #1c1f4c;
       color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
+      padding: 2rem;
+      margin-top: 2rem;
     }
 
     footer ul {
@@ -83,13 +82,96 @@
     }
 
     footer a {
-      color: #f9fafb;
+      color: white;
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1rem;
+      color: #ccc;
+      background-color: #111827;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="homepage.html" title="العودة إلى الصفحة الرئيسية"><i class="fas fa-arrow-right"></i></a>
+      <strong>IMAMUHub</strong>
+    </div>
+    <div class="nav-links">
+      <a href="homepage.html">الصفحة الرئيسية</a>
+      <a href="clubs">النوادي</a>
+      <a href="#">الملف الشخصي</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>عن منصة IMAMUHub</h1>
+  </header>
+
+  <main>
+    <h2>ما هي IMAMUHub؟</h2>
+    <p>
+      IMAMUHub هي منصة طلابية تهدف إلى تسهيل التفاعل بين طلاب جامعة الإمام محمد بن سعود الإسلامية والنوادي والفعاليات المختلفة داخل الجامعة.
+    </p>
+
+    <h2>أهداف المنصة</h2>
+    <p>
+      - تمكين الطلاب من التسجيل والانضمام إلى النوادي بسهولة. <br>
+      - إدارة الفعاليات الطلابية بكفاءة. <br>
+      - تسهيل التواصل بين الطلاب ومنظمي الأنشطة.
+    </p>
+
+    <h2>الفئة المستهدفة</h2>
+    <p>
+      طلاب وطالبات الجامعة الراغبين في تنمية مهاراتهم والمشاركة في الأنشطة اللامنهجية.
+    </p>
+
+    <h2>المميزات</h2>
+    <p>
+      - واجهة سهلة الاستخدام. <br>
+      - دعم التسجيل في النوادي والفعاليات. <br>
+      - صلاحيات مختلفة للمستخدمين (مثل المشرفين والطلاب).
+    </p>
+
+    <h2>الخصوصية والأمان</h2>
+    <p>
+      يتم الحفاظ على بيانات المستخدمين بسرية تامة وفقًا لسياسة الخصوصية المعتمدة.
+    </p>
+  </main>
+
+  <footer>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+      <div>
+        <h3>IMAMUHub</h3>
+        <p>منصة طلابية لخدمة طلاب جامعة الإمام.</p>
+      </div>
+      <div>
+        <h4>روابط مهمة</h4>
+        <ul>
+          <li><a href="about.html">عن الجامعة</a></li>
+          <li><a href="Privacy.html">سياسة الخصوصية</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <p><i class="fas fa-envelope"></i> info@imamu.edu.sa</p>
+        <p><i class="fas fa-phone"></i> 011-2580000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 جامعة الإمام محمد بن سعود الإسلامية - جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+</body>
+</html>
+
