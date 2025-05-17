@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IMMAMUHub</title>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/indexlastcheng.css">
+</head>
+
+<body>
+
+
+    <nav>
+        <div><strong>IMAMUHub</strong></div>
+        <div class="nav-links">
+            <a href="#">الصفحة الرئيسية</a> <!-- تم التعديل -->
+            <a href="#clubs">النوادي</a>
+            <a href="/UserProfile.html" id="profile-link">الملف الشخصي</a> <!-- تم التعديل وإضافة id -->
+        </div>
+        <button class="logout-btn">تسجيل الخروج</button>
+    </nav>
+
+
+    <section class="hero">
+        <h1>وجهتك للفُرص، الفعاليات، والتَّجربة</h1>
+        <p>اِستكشف أندية جامعة الإمام محمد بن سعود، واجعل حياتك الجامعية أكثر إشراقاً!</p>
+        <a href="#clubs"><button class="scroll-button">تعرف على النوادي</button></a>
+    </section>
+
+    <section class="clubs-section" id="clubs">
+        <h2>صفحة النوادي</h2>
+        <div class="clubs-container">
+            <!-- سيتم تحميل بطاقات النوادي هنا بواسطة JavaScript -->
+            <p>جارٍ تحميل النوادي...</p> <!-- رسالة تحميل مبدئية -->
+        </div>
+    </section>
+
+    <style>
+        /* احتفظ بستايلاتك هنا */
+        .register-btn {
+            display: inline-block;
+            background-color: #f97316;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Tajawal', sans-serif;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .register-btn:hover {
+            background-color: #ea580c;
+        }
+         /* ستايل بسيط لرسائل الخطأ/التحميل */
+         .clubs-container p {
+            text-align: center;
+            color: #555;
+            font-size: 1.1em;
+         }
+         .clubs-container .error {
+             color: #d9534f; /* لون أحمر للخطأ */
+         }
+    </style>
+
+
+    <section id="financial-jam" style="position: relative; background-image: url('https://your-image-url.jpg'); background-size: cover; background-position: center; color: white; padding: 50px 20px; text-align: center; font-family: 'Arial', sans-serif; overflow: hidden;">
+
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); z-index: 0;"></div>
+
+        <div data-aos="fade-up" style="position: relative; z-index: 1;">
+            <h2 style="font-size: 2em; margin-bottom: 20px;">جمعة البيانات المالية</h2>
+            <p style="font-size: 1.2em; max-width: 700px; margin: auto;">
+                تحبّ تحليل البيانات أو مهتم بتحليل البيانات؟ انضم لنا في جمعة البيانات المالية وشارك في هاكثون لتحليل البيانات باستخدام البيانات الموجودة في الرابط، وسيتم إرسال رابط التسليم لأفكار المشاركين عبر البريد. ننتظر إبداعاتكم!
+            </p>
+            <a href="#" style="display: inline-block; margin-top: 20px; background-color: #f97316; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+      اذهب لصفحة التحدي
+    </a>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 60px 20px; background-color: #f9fafb;">
+        <h2 style="text-align: center; font-size: 2em; margin-bottom: 30px;">تواصل معنا</h2>
+        <form id="contactForm" style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: right; direction: rtl;">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">الاسم</label>
+                <input type="text" name="name" id="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">البريد الإلكتروني</label>
+                <input type="email" name="email" id="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">رسالتك</label>
+                <textarea name="message" id="message" required rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" style="background-color: #f97316; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 1em; cursor: pointer;">إرسال</button>
+            </div>
+        </form>
+
+        <!-- تم نقل السكربت إلى وسم السكربت الرئيسي في الأسفل -->
+
+    </section>
+    <footer style="background-color: #2c3e50; color: white; padding: 30px 0 10px; margin-top: 0;">
+
+
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 15px;">
+
+            <div>
+                <h3>روابط سريعة</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="Privacy.html" style="color: white; text-decoration: none;"><i class="fas fa-lock"></i> سياسة الخصوصية</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none;"><i class="fas fa-users"></i> من نحن</a></li>
+                </ul>
+            </div>
+            <div>
+
+                <h3>تواصل معنا</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="mailto:info@example.com" style="color: white; text-decoration: none;"><i class="fas fa-envelope"></i> البريد الإلكتروني</a></li>
+                    <li><a href="tel:+966123456789" style="color: white; text-decoration: none;"><i class="fas fa-phone"></i> +966 123 456 789</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p style="margin-top: 20px;">© 2025 جميع الحقوق محفوظة</p>
+
+        </section>
+
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: #f97316; color: white; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer;">
+          ↑ أعلى
+      </button>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <script>
+        // التحقق من المصادقة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            // نحتاج أيضًا للتحقق من وجود بيانات المستخدم للتأكد من نوعه (طالب أو نادي)
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!token || !user) {
+                // إذا لم يتم العثور على توكن أو بيانات مستخدم، قم بالتوجيه لصفحة الدخول
+                window.location.href = '/auth.html';
+                return; // توقف عن تنفيذ المزيد من الأكواد
+            }
+
+            // إذا كان المستخدم مسجل الدخول، قم بتحميل محتوى الصفحة
+            await loadClubs(); // انتظر تحميل النوادي قبل إعداد الأشياء الأخرى
+            setupLogout();
+            // يمكنك إضافة منطق هنا لإخفاء/إظهار عناصر بناءً على نوع المستخدم (user.type) إذا احتجت لذلك
+
+            // تأكد من تحديث روابط الملاحة إذا لزم الأمر بناءً على نوع المستخدم
+             // مثال: إذا كان نادي، قد لا يحتاج لرؤية كل شيء بنفس الطريقة
+             // const profileLink = document.getElementById('profile-link');
+             // if (user.type === 'club') {
+             //    profileLink.href = '/ClubProfile.html'; // افترض وجود صفحة لملف النادي
+             // } else { // student
+             //    profileLink.href = '/UserProfile.html';
+             // }
+
+
+        });
+
+        // دالة تحميل النوادي من الـ Backend
+        async function loadClubs() {
+            const clubsContainer = document.querySelector('.clubs-container');
+            clubsContainer.innerHTML = '<p>جارٍ تحميل النوادي...</p>'; // رسالة تحميل
+
+            try {
+                // مسار جلب النوادي /api/clubs لا يحتاج إلى توكن حسب الكود الذي قدمته
+                const response = await fetch('/api/clubs');
+
+                if (!response.ok) {
+                    // في حالة حدوث خطأ في الاستجابة (مثل 404, 500)
+                    const errorData = await response.json();
+                    console.error('Failed to fetch clubs:', response.status, errorData.message);
+                    clubsContainer.innerHTML = `<p class="error">حدث خطأ أثناء تحميل النوادي: ${errorData.message || response.statusText}</p>`;
+                    return;
+                }
+
+                const clubs = await response.json();
+
+                clubsContainer.innerHTML = ''; // مسح رسالة التحميل أو النوادي الثابتة
+
+                if (clubs.length === 0) {
+                    clubsContainer.innerHTML = '<p>لا توجد نوادي متاحة حالياً.</p>';
+                    return;
+                }
+
+                // إنشاء بطاقات النوادي ديناميكيًا
+                clubs.forEach(club => {
+                    // بناء رابط التسجيل مع تمرير معرف النادي في الـ query parameter
+                    // رابط التسجيل يفترض أنه يأخذ الطالب إلى صفحة يتم فيها تقديم طلب الانضمام للنادي
+                    const registerLink = `/register.html?clubId=${club._id}&clubName=${encodeURIComponent(club.name)}`;
+
+                    const clubCardHTML = `
+                        <div class="club-card" data-aos="fade-up">
+                            <img src="${club.imageUrl}" alt="${club.name}" class="club-image">
+                            <div class="club-info">
+                                <h3>${club.name}</h3>
+                                <p>${club.description}</p>
+                                <a href="${registerLink}" class="register-btn">سجل معنا</a>
+                            </div>
+                        </div>
+                    `;
+                    clubsContainer.innerHTML += clubCardHTML;
+                });
+
+                 // إعادة تهيئة AOS بعد إضافة العناصر الجديدة للـ DOM
+                 AOS.init({
+                     duration: 1000,
+                     once: true
+                 });
+
+
+            } catch (error) {
+                console.error('Error fetching clubs:', error);
+                clubsContainer.innerHTML = '<p class="error">حدث خطأ غير متوقع أثناء تحميل النوادي.</p>';
+            }
+        }
+
+        // دالة إعداد زر تسجيل الخروج
+        function setupLogout() {
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    // حذف التوكن وبيانات المستخدم من التخزين المحلي
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    // التوجيه إلى صفحة تسجيل الدخول/الإنشاء
+                    window.location.href = '/auth.html';
+                });
+            }
+        }
+
+        // تحديث رابط "الملف الشخصي" ليوجه لصفحة المستخدم
+        function setupProfileLink() {
+            const profileLink = document.getElementById('profile-link');
+            if (profileLink) {
+                 // حالياً يوجه لصفحة UesrProfile.html، يمكن تعديله لاحقاً لصفحة النادي إذا كان نوع المستخدم نادي
+                profileLink.href = '/UserProfile.html';
+            }
+        }
+
+        // كود إرسال نموذج التواصل (تم تعديل الرابط فقط)
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+
+                try {
+                    // استخدام المسار النسبي بدلاً من المسار الكامل
+                    const res = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (res.ok) {
+                        alert('✅ تم إرسال رسالتك بنجاح');
+                        this.reset(); // يمسح الحقول بعد الإرسال
+                    } else {
+                         const errorData = await res.json();
+                         alert(`❌ حدث خطأ أثناء الإرسال: ${errorData.message || res.statusText}`);
+                         console.error('Contact form submission failed:', res.status, errorData);
+                    }
+                } catch (error) {
+                     console.error('Error submitting contact form:', error);
+                     alert('❌ حدث خطأ غير متوقع أثناء إرسال الرسالة.');
+                }
+            });
+
+    </script>
+
+
+</body>
+
+</html>
